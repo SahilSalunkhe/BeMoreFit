@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Be More Fit Gym</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="jaygajananlogo.png" alt="Logo">
+
+            <img src="bemorefitlogo.png" alt="Be More Fit">
+
+        </div>
+
+        <div class="brand-name">
+
+            BE MORE <span>FIT</span>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="Machine/machinepageindex.html">Machines</a>
+
+            <a href="#">About Us</a>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <div class="mini-title">
+
+                TRAIN SMARTER. BECOME STRONGER.
+
+            </div>
+
+            <h1>
+
+                SCAN THE QR ON MACHINE &
+
+                <span>TRAIN SMARTER</span>
+
+            </h1>
+
+            <p>
+
+                Scan the QR code on any machine and instantly access exercise tutorials,
+                beginner guides and professional tips.
+
+            </p>
+
+            <!-- ================= SEARCH ================= -->
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search Machines & Exercises..."
+                    autocomplete="off">
+
+                <button onclick="searchMachine()">
+
+                    🔍
+
+                </button>
+
+                <!-- Suggestions will appear here -->
+
+                <div id="suggestions" class="suggestions"></div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <img src="Images/Home Page Image/homopagebackground.png"
+                 alt="Gym">
+
+        </div>
+
+    </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="card">
+
+            <img src="Images/Home Page Image/advancedtraining.png" alt="Advanced Equipment">
+
+            <h3>Advanced Equipment</h3>
+
+            <p>
+                Latest technology machines for better results.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <img src="Images/Home Page Image/parking.png" alt="Parking">
+
+            <h3>Free Parking</h3>
+
+            <p>
+                Hassle-free parking space for all our members.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <img src="Images/Home Page Image/freelockers.png" alt="Lockers">
+
+            <h3>Free Lockers</h3>
+
+            <p>
+                Secure lockers to keep your belongings safe.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <img src="Images/Home Page Image/professionaltrainers.png" alt="Professional Trainers">
+
+            <h3>Professional Trainers</h3>
+
+            <p>
+                Certified and experienced trainers to guide you.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <img src="Images/Home Page Image/ORBASED.png" alt="QR Training">
+
+            <h3>QR Based Smart Training</h3>
+
+            <p>
+                Scan, learn and perform exercises the right way.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <img src="Images/Home Page Image/bemorefitlogo.png" alt="Logo">
+
+            <h2>
+
+                BE MORE <span>FIT</span>
+
+            </h2>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>CONTACT US</h3>
+
+            <p>
+
+                📍 Kukshet Gaon, Plot P11,<br>
+                Sector 14 Nerul Rd,<br>
+                Sector 14, Nerul,<br>
+                Navi Mumbai,<br>
+                Maharashtra - 400706
+
+            </p>
+
+            <p>
+
+                📞 +91 70396 35557
+
+            </p>
+
+            <p>
+
+                📧 sagar_gawankar@yahoo.co.in
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+<script>
+// ===========================
+// SEARCH WORDS
+// ===========================
+
+const searchWords = [
+    "Flat Bench Press Barbell",
+    
+];
+
+// ===========================
+// ELEMENTS
+// ===========================
+
+const input = document.getElementById("searchInput");
+const suggestions = document.getElementById("suggestions");
+
+// Safety Check
+if (input && suggestions) {
+
+    // ===========================
+    // SEARCH BUTTON
+    // ===========================
+
+    function searchMachine() {
+
+        const value = input.value.trim();
+
+        if (value === "") {
+
+            window.location.href = "Machine/machinepageindex.html";
+
+        } else {
+
+            window.location.href =
+                "Machine/machinepageindex.html?search=" +
+                encodeURIComponent(value);
+
+        }
+
+    }
+
+    // Make function available to button
+    window.searchMachine = searchMachine;
+
+    // ===========================
+    // LIVE SUGGESTIONS
+    // ===========================
+
+    input.addEventListener("input", function () {
+
+        const value = this.value.toLowerCase().trim();
+
+        suggestions.innerHTML = "";
+
+        if (value === "") {
+            suggestions.style.display = "none";
+            return;
+        }
+
+        const filtered = searchWords.filter(word =>
+            word.toLowerCase().includes(value)
+        );
+
+        if (filtered.length === 0) {
+            suggestions.style.display = "none";
+            return;
+        }
+
+        filtered.slice(0, 8).forEach(word => {
+
+            const item = document.createElement("div");
+
+            item.className = "suggestion-item";
+
+            item.textContent = word;
+
+            item.addEventListener("click", function () {
+
+                input.value = word;
+
+                suggestions.style.display = "none";
+
+                searchMachine();
+
+            });
+
+            suggestions.appendChild(item);
+
+        });
+
+        suggestions.style.display = "block";
+
+    });
+
+    // ===========================
+    // ENTER KEY
+    // ===========================
+
+    input.addEventListener("keydown", function (e) {
+
+        if (e.key === "Enter") {
+
+            e.preventDefault();
+
+            searchMachine();
+
+        }
+
+    });
+
+    // ===========================
+    // CLICK OUTSIDE
+    // ===========================
+
+    document.addEventListener("click", function (e) {
+
+        if (
+            !input.contains(e.target) &&
+            !suggestions.contains(e.target)
+        ) {
+
+            suggestions.style.display = "none";
+
+        }
+
+    });
+
+    // ===========================
+    // SHOW AGAIN ON FOCUS
+    // ===========================
+
+    input.addEventListener("focus", function () {
+
+        if (this.value.trim() !== "") {
+
+            this.dispatchEvent(new Event("input"));
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>

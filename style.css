@@ -1,0 +1,1228 @@
+/*======================================================
+
+        BE MORE FIT V5
+        PART 1
+        RESET + BODY + HEADER
+
+======================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#ffffff;
+
+    color:#111827;
+
+    overflow-x:hidden;
+
+}
+
+/*========================
+
+COLORS
+
+========================*/
+
+:root{
+
+    --green:#22C55E;
+
+    --green-dark:#16A34A;
+
+    --text:#111827;
+
+    --light:#6B7280;
+
+    --border:#E5E7EB;
+
+    --bg:#F8FAFC;
+
+    --radius:20px;
+
+    --shadow:
+
+    0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/*========================
+
+SCROLLBAR
+
+========================*/
+
+::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--green);
+
+    border-radius:20px;
+
+}
+
+/*========================
+
+HEADER
+
+========================*/
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:74px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 18px;
+
+    border-bottom:1px solid var(--border);
+
+    z-index:999;
+
+}
+
+/*========================
+
+LOGOS
+
+========================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.logo img:first-child{
+
+    width:42px;
+
+    height:42px;
+
+    object-fit:contain;
+
+}
+
+.logo img:last-child{
+
+    height:46px;
+
+    width:auto;
+
+}
+
+/*========================
+
+BRAND
+
+========================*/
+
+.brand-name{
+
+    display:none;
+
+}
+
+/*========================
+
+BOTTOM NAVBAR
+
+========================*/
+
+nav{
+
+    position:fixed;
+
+    bottom:15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:92%;
+
+    max-width:380px;
+
+    height:64px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.12);
+
+    border:1px solid var(--border);
+
+    z-index:999;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#111827;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:var(--green);
+
+}
+
+/*========================
+
+DESKTOP
+
+========================*/
+
+@media(min-width:992px){
+
+header{
+
+width:94%;
+
+left:50%;
+
+top:18px;
+
+transform:translateX(-50%);
+
+padding:0 30px;
+
+border-radius:22px;
+
+box-shadow:var(--shadow);
+
+border:1px solid var(--border);
+
+height:82px;
+
+}
+
+.brand-name{
+
+display:block;
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:34px;
+
+font-weight:900;
+
+letter-spacing:1px;
+
+}
+
+.brand-name span{
+
+color:var(--green);
+
+}
+
+.logo img:first-child{
+
+width:50px;
+
+height:50px;
+
+}
+
+.logo img:last-child{
+
+height:60px;
+
+}
+
+nav{
+
+position:static;
+
+transform:none;
+
+width:auto;
+
+height:auto;
+
+background:none;
+
+border:none;
+
+box-shadow:none;
+
+gap:34px;
+
+}
+
+nav a{
+
+font-size:16px;
+
+position:relative;
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:3px;
+
+background:var(--green);
+
+transition:.3s;
+
+border-radius:20px;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+}
+
+/*======================================================
+
+        BE MORE FIT V5
+        PART 2
+        HERO SECTION
+
+======================================================*/
+
+.hero{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:110px 20px 40px;
+
+    background:#ffffff;
+
+}
+
+/*========================
+
+LEFT
+
+========================*/
+
+.hero-left{
+
+    width:100%;
+
+    max-width:650px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+/*========================
+
+MINI TITLE
+
+========================*/
+
+.mini-title{
+
+    background:#ECFDF3;
+
+    color:var(--green);
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    margin-bottom:22px;
+
+}
+
+/*========================
+
+HEADING
+
+========================*/
+
+.hero-left h1{
+
+    font-size:40px;
+
+    font-weight:900;
+
+    line-height:48px;
+
+    color:var(--text);
+
+    margin-bottom:18px;
+
+}
+
+.hero-left h1 span{
+
+    color:var(--green);
+
+}
+
+/*========================
+
+PARAGRAPH
+
+========================*/
+
+.hero-left p{
+
+    color:var(--light);
+
+    font-size:15px;
+
+    line-height:28px;
+
+    max-width:500px;
+
+}
+
+/*========================
+
+SEARCH
+
+========================*/
+
+.search-box{
+
+    margin-top:28px;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    height:58px;
+
+    border:2px solid #E5E7EB;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.06);
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    color:#111827;
+
+}
+
+.search-box input::placeholder{
+
+    color:#9CA3AF;
+
+}
+
+.search-box button{
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    background:var(--green);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+/*========================
+
+RIGHT IMAGE
+
+========================*/
+
+.hero-right{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:35px;
+
+}
+
+.hero-right img{
+
+    width:100%;
+
+    max-width:320px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    animation:floatImage 4s ease-in-out infinite;
+
+}
+
+/*========================
+
+FLOAT
+
+========================*/
+
+@keyframes floatImage{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*========================
+
+TABLET
+
+========================*/
+
+@media(min-width:768px){
+
+.hero{
+
+padding:140px 40px 60px;
+
+}
+
+.hero-left h1{
+
+font-size:56px;
+
+line-height:66px;
+
+}
+
+.hero-left p{
+
+font-size:17px;
+
+line-height:32px;
+
+}
+
+.hero-right img{
+
+max-width:500px;
+
+}
+
+.search-box{
+
+max-width:560px;
+
+}
+
+}
+
+/*========================
+
+DESKTOP
+
+========================*/
+
+@media(min-width:992px){
+
+.hero{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+text-align:left;
+
+padding:170px 6% 80px;
+
+}
+
+.hero-left{
+
+align-items:flex-start;
+
+}
+
+.hero-right{
+
+margin-top:0;
+
+}
+
+.hero-right img{
+
+max-width:650px;
+
+}
+
+.hero-left h1{
+
+font-size:72px;
+
+line-height:80px;
+
+}
+
+.hero-left p{
+
+max-width:560px;
+
+}
+
+}
+
+/*======================================================
+
+        BE MORE FIT V5
+        PART 3
+        FEATURES SECTION
+
+======================================================*/
+
+@media(min-width:992px){
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:22px;
+
+width:92%;
+
+margin:80px auto;
+
+}
+
+.card{
+
+width:100%;
+
+}
+
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-child(4),
+.card:nth-child(5){
+
+grid-column:auto;
+
+}
+
+}
+
+/*========================
+
+CARD
+
+========================*/
+
+.card{
+
+    
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:28px 22px;
+
+    
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+
+    position:relative;
+
+    overflow:hidden;
+    width:100%;
+
+height:100%;    
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#BBF7D0;
+
+    box-shadow:
+
+    0 20px 40px rgba(34,197,94,.14);
+
+}
+
+/*========================
+
+GREEN TOP BAR
+
+========================*/
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:var(--green);
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s;
+
+}
+
+.card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/*========================
+
+ICON
+
+========================*/
+
+.card img{
+
+    width:72px;
+
+    height:72px;
+
+    object-fit:contain;
+
+    padding:14px;
+
+    background:#F0FDF4;
+
+    border-radius:18px;
+
+    margin-bottom:22px;
+
+    transition:.35s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+    background:#DCFCE7;
+
+}
+
+/*========================
+
+TITLE
+
+========================*/
+
+.card h3{
+
+    font-size:22px;
+
+    color:var(--text);
+
+    font-weight:800;
+
+    margin-bottom:14px;
+
+    transition:.3s;
+
+}
+
+.card:hover h3{
+
+    color:var(--green);
+
+}
+
+/*========================
+
+TEXT
+
+========================*/
+
+.card p{
+
+    color:var(--light);
+
+    font-size:15px;
+
+    line-height:28px;
+
+}
+
+/*========================
+
+DESKTOP
+
+========================*/
+
+@media(min-width:992px){
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:22px;
+
+width:92%;
+
+max-width:1400px;
+
+margin:80px auto;
+
+padding:0;
+
+overflow:visible;
+
+}
+
+.card{
+
+min-width:unset;
+
+width:100%;
+
+}
+
+}
+
+/*========================
+
+TABLET
+
+========================*/
+
+@media(min-width:768px) and (max-width:991px){
+
+.features{
+
+grid-template-columns:repeat(3,1fr);
+
+width:92%;
+
+margin:50px auto;
+
+}
+
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-child(4),
+.card:nth-child(5){
+
+grid-column:auto;
+
+}
+
+}
+
+/*======================================================
+
+        BE MORE FIT V5
+        PART 4
+        PREMIUM FOOTER
+
+======================================================*/
+
+footer{
+
+    width:100%;
+
+    margin-top:80px;
+
+    background:#ffffff;
+
+    border-top:1px solid var(--border);
+
+    padding:55px 20px 100px;
+
+}
+
+/*========================
+
+FOOTER LOGO
+
+========================*/
+
+.footer-logo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.footer-logo img{
+
+    width:75px;
+
+    height:75px;
+
+    object-fit:contain;
+
+    margin-bottom:15px;
+
+}
+
+.footer-logo h2{
+
+    font-size:30px;
+
+    font-weight:900;
+
+    color:var(--text);
+
+}
+
+.footer-logo span{
+
+    color:var(--green);
+
+}
+
+/*========================
+
+CONTACT BOX
+
+========================*/
+
+.footer-contact{
+
+    width:100%;
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:#F8FAFC;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.05);
+
+}
+
+.footer-contact h3{
+
+    text-align:center;
+
+    font-size:24px;
+
+    color:var(--green);
+
+    margin-bottom:22px;
+
+    font-weight:800;
+
+}
+
+/*========================
+
+TEXT
+
+========================*/
+
+.footer-contact p{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    color:var(--light);
+
+    font-size:15px;
+
+    line-height:28px;
+
+    margin-bottom:18px;
+
+}
+
+/*========================
+
+HOVER
+
+========================*/
+
+.footer-contact{
+
+    transition:.35s;
+
+}
+
+.footer-contact:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 18px 35px rgba(34,197,94,.10);
+
+}
+
+/*========================
+
+DESKTOP
+
+========================*/
+
+@media(min-width:992px){
+
+footer{
+
+padding:70px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;
+
+gap:80px;
+
+}
+
+.footer-logo{
+
+margin:0;
+
+align-items:flex-start;
+
+text-align:left;
+
+}
+
+.footer-logo img{
+
+margin-bottom:20px;
+
+}
+
+.footer-logo h2{
+
+font-size:38px;
+
+}
+
+.footer-contact{
+
+margin:0;
+
+max-width:500px;
+
+}
+
+.footer-contact h3{
+
+text-align:left;
+
+}
+
+}
+
+/*========================
+
+SMALL MOBILE
+
+========================*/
+
+@media(max-width:400px){
+
+.footer-logo h2{
+
+font-size:25px;
+
+}
+
+.footer-contact{
+
+padding:22px;
+
+}
+
+.footer-contact h3{
+
+font-size:20px;
+
+}
+
+.footer-contact p{
+
+font-size:14px;
+
+line-height:24px;
+
+}
+
+}   
