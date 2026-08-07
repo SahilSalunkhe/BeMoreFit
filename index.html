@@ -229,7 +229,7 @@
 // SEARCH WORDS
 // ===========================
 
-const machinePages = {
+const keywords = {
     "olympic flat bench press": "Machine Pages/3flatbenchpressmachine/index.html",
     "olympic flat bench": "Machine Pages/3flatbenchpressmachine/index.html",
     "flat bench press machine": "Machine Pages/3flatbenchpressmachine/index.html",
@@ -237,7 +237,24 @@ const machinePages = {
     "flat bench press": "Machine Pages/3flatbenchpressmachine/index.html"
 };
 
-    const searchWords = Object.keys(machinePages);
+    const searchWords = Object.keys(keywords);
+
+    function searchMachine() {
+
+    const value = input.value.toLowerCase().trim();
+
+    if (keywords[value]) {
+
+        window.location.href = keywords[value];
+
+    } else {
+
+        alert("Machine not found!");
+
+    }
+}
+
+   
 
 // ===========================
 // ELEMENTS
