@@ -474,29 +474,17 @@ SEARCH
 ========================*/
 
 .search-box{
-
+    position: relative;   /* <-- He add kar */
     margin-top:28px;
-
     width:100%;
-
     display:flex;
-
     align-items:center;
-
     height:58px;
-
     border:2px solid #E5E7EB;
-
     border-radius:50px;
-
-    overflow:hidden;
-
-    background:#ffffff;
-
-    box-shadow:
-
-    0 10px 25px rgba(0,0,0,.06);
-
+    overflow:visible;
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
 .search-box input{
@@ -1226,3 +1214,17 @@ line-height:24px;
 }
 
 }   
+
+.suggestions{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    width:100%;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:12px;
+    z-index:999;
+    display:none;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
