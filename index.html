@@ -251,23 +251,7 @@ if (input && suggestions) {
     // SEARCH BUTTON
     // ===========================
 
-    function searchMachine() {
-
-        const value = input.value.trim();
-
-        if (value === "") {
-
-            window.location.href = "Machine/machinepageindex.html";
-
-        } else {
-
-            window.location.href =
-                "Machine/machinepageindex.html?search=" +
-                encodeURIComponent(value);
-
-        }
-
-    }
+        
 
     // Make function available to button
     window.searchMachine = searchMachine;
