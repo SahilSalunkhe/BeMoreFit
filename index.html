@@ -225,6 +225,7 @@
     <!-- ================= JAVASCRIPT ================= -->
 
 <script>
+
 // ===========================
 // SEARCH WORDS
 // ===========================
@@ -243,36 +244,46 @@ const keywords = {
 
 const searchWords = Object.keys(keywords);
 
-function searchMachine() {
-    const value = input.value.toLowerCase().trim();
 
-    if (keywords[value]) {
-        window.location.href = keywords[value];
-    } else {
-        alert("Machine not found!");
+// ===========================
+// WAIT FOR PAGE TO LOAD
+// ===========================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.getElementById("searchInput");
+    const suggestions = document.getElementById("suggestions");
+
+    // Safety check
+    if (!input || !suggestions) {
+        console.error("Search input or suggestions element not found!");
+        return;
     }
-}
 
-   
-
-// ===========================
-// ELEMENTS
-// ===========================
-
-const input = document.getElementById("searchInput");
-const suggestions = document.getElementById("suggestions");
-
-// Safety Check
-if (input && suggestions) {
 
     // ===========================
-    // SEARCH BUTTON
+    // SEARCH FUNCTION
     // ===========================
 
-        
+    function searchMachine() {
 
-    // Make function available to button
+        const value = input.value.toLowerCase().trim();
+
+        if (keywords[value]) {
+
+            window.location.href = keywords[value];
+
+        } else {
+
+            alert("Machine not found!");
+
+        }
+    }
+
+
+    // Make function available to HTML button
     window.searchMachine = searchMachine;
+
 
     // ===========================
     // LIVE SUGGESTIONS
@@ -284,21 +295,30 @@ if (input && suggestions) {
 
         suggestions.innerHTML = "";
 
+        // Empty input
         if (value === "") {
             suggestions.style.display = "none";
             return;
         }
 
+
+        // Find matching keywords
         const filtered = searchWords.filter(word =>
             word.toLowerCase().includes(value)
         );
 
+
+        // No results
         if (filtered.length === 0) {
+
             suggestions.style.display = "none";
             return;
+
         }
 
-        filtered.slice(0, 8).forEach(word => {
+
+        // Create suggestions
+        filtered.slice(0, 8).forEach(function (word) {
 
             const item = document.createElement("div");
 
@@ -306,6 +326,8 @@ if (input && suggestions) {
 
             item.textContent = word;
 
+
+            // Click suggestion
             item.addEventListener("click", function () {
 
                 input.value = word;
@@ -316,13 +338,17 @@ if (input && suggestions) {
 
             });
 
+
             suggestions.appendChild(item);
 
         });
 
+
+        // Show suggestions
         suggestions.style.display = "block";
 
     });
+
 
     // ===========================
     // ENTER KEY
@@ -339,6 +365,7 @@ if (input && suggestions) {
         }
 
     });
+
 
     // ===========================
     // CLICK OUTSIDE
@@ -357,8 +384,9 @@ if (input && suggestions) {
 
     });
 
+
     // ===========================
-    // SHOW AGAIN ON FOCUS
+    // SHOW SUGGESTIONS ON FOCUS
     // ===========================
 
     input.addEventListener("focus", function () {
@@ -371,7 +399,7 @@ if (input && suggestions) {
 
     });
 
-}
+});
 
 </script>
 
