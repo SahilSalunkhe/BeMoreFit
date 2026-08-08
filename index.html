@@ -234,27 +234,22 @@ const keywords = {
     "olympic flat bench": "Machine Pages/3flatbenchpressbarbell/index.html",
     "flat bench press machine": "Machine Pages/3flatbenchpressbarbell/index.html",
     "bench press flat": "Machine Pages/3flatbenchpressbarbell/index.html",
-    "flat bench press": "Machine Pages/3flatbenchpressbarbell/index.html"
+    "flat bench press": "Machine Pages/3flatbenchpressbarbell/index.html",
 
     "incline bench press barbell": "Machine Pages/4inclinebenchpressbarbell/index.html",
-"barbell incline bench press": "Machine Pages/4inclinebenchpressbarbell/index.html",
-"incline barbell bench press": "Machine Pages/4inclinebenchpressbarbell/index.html",
+    "barbell incline bench press": "Machine Pages/4inclinebenchpressbarbell/index.html",
+    "incline barbell bench press": "Machine Pages/4inclinebenchpressbarbell/index.html"
 };
 
-    const searchWords = Object.keys(keywords);
+const searchWords = Object.keys(keywords);
 
-    function searchMachine() {
-
+function searchMachine() {
     const value = input.value.toLowerCase().trim();
 
     if (keywords[value]) {
-
         window.location.href = keywords[value];
-
     } else {
-
         alert("Machine not found!");
-
     }
 }
 
