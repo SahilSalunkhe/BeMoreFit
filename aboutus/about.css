@@ -1,0 +1,935 @@
+/* =========================================================
+   BE MORE FIT GYM
+   ABOUT US PAGE
+   WHITE + BLACK + GREEN
+   FULLY RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   BRAND COLORS
+   ========================================================= */
+
+:root {
+    --green: #22C55E;
+    --green-dark: #16A34A;
+
+    --black: #111111;
+    --text: #222222;
+    --text-light: #666666;
+    --muted: #888888;
+
+    --white: #ffffff;
+
+    --border: #e5e7eb;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: #ffffff;
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.about-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   IMAGE SECTION
+   ========================================================= */
+
+.about-images {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 45px 30px 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   IMAGE CARD
+   ========================================================= */
+
+.about-image {
+    width: 100%;
+
+    /*
+       Portrait ratio.
+       This keeps the original portrait photos
+       properly proportioned.
+    */
+
+    aspect-ratio: 2 / 3;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 2px solid var(--green);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   IMAGE CARD HOVER
+   ========================================================= */
+
+.about-image:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(34, 197, 94, 0.15);
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    /*
+       IMPORTANT:
+       contain = complete image visible.
+       No cropping.
+    */
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #ffffff;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Very subtle desktop hover */
+
+.about-image:hover img {
+    transform: scale(1.015);
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+   ========================================================= */
+
+.about-content {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 85px 40px 75px;
+}
+
+
+/* =========================================================
+   ABOUT LABEL
+   ========================================================= */
+
+.about-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+   ========================================================= */
+
+.about-content h1 {
+    max-width: 900px;
+
+    margin-bottom: 42px;
+
+    color: var(--black);
+
+    font-size: clamp(44px, 6vw, 76px);
+
+    font-weight: 900;
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+}
+
+
+.about-content h1 span {
+    display: block;
+
+    color: var(--green);
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+   ========================================================= */
+
+.about-content p {
+    max-width: 900px;
+
+    margin-bottom: 24px;
+
+    color: var(--text-light);
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    line-height: 1.85;
+}
+
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+.about-content strong {
+    color: var(--black);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HIGHLIGHT SECTION
+   ========================================================= */
+
+.about-highlight {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HIGHLIGHT ITEM
+   ========================================================= */
+
+.highlight-item {
+    min-height: 160px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-right: 1px solid var(--border);
+}
+
+
+.highlight-item:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   HIGHLIGHT TITLE
+   ========================================================= */
+
+.highlight-item strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--green);
+
+    font-size: 36px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HIGHLIGHT DESCRIPTION
+   ========================================================= */
+
+.highlight-item span {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.about-contact {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 90px 40px 105px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTACT LABEL
+   ========================================================= */
+
+.about-contact .about-label {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CONTACT HEADING
+   ========================================================= */
+
+.about-contact h2 {
+    margin-bottom: 22px;
+
+    color: var(--black);
+
+    font-size: clamp(36px, 5vw, 60px);
+
+    font-weight: 900;
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+
+    text-transform: uppercase;
+}
+
+
+.about-contact h2 span {
+    color: var(--green);
+}
+
+
+/* =========================================================
+   ADDRESS
+   ========================================================= */
+
+.about-contact p {
+    max-width: 650px;
+
+    margin: 0 auto 22px;
+
+    color: var(--text-light);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+.about-contact a {
+    display: inline-block;
+
+    color: var(--black);
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    border-bottom: 2px solid var(--green);
+
+    padding-bottom: 5px;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.about-contact a:hover {
+    color: var(--green);
+
+    border-color: var(--black);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.about-footer {
+    width: 100%;
+
+    padding: 22px 20px;
+
+    border-top: 1px solid var(--border);
+
+    background: #fafafa;
+
+    text-align: center;
+}
+
+
+.about-footer p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-images {
+        max-width: 900px;
+
+        padding: 35px 25px 0;
+
+        gap: 18px;
+    }
+
+
+    .about-image {
+        border-width: 2px;
+
+        border-radius: 11px;
+    }
+
+
+    .about-content {
+        padding: 70px 30px 65px;
+    }
+
+
+    .about-content h1 {
+        font-size: 58px;
+
+        margin-bottom: 38px;
+    }
+
+
+    .about-content p {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    .about-highlight {
+        width: calc(100% - 40px);
+
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+
+    .highlight-item {
+        min-height: 145px;
+
+        padding: 28px;
+    }
+
+
+    .highlight-item strong {
+        font-size: 31px;
+    }
+
+
+    .about-contact {
+        padding: 75px 30px 90px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    .about-page {
+        width: 100%;
+
+        background: #ffffff;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       TWO PHOTOS
+       ALWAYS SIDE BY SIDE
+       ===================================================== */
+
+    .about-images {
+        width: 100%;
+
+        max-width: 520px;
+
+        margin: 0 auto;
+
+        padding: 20px 12px 0;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+    }
+
+
+    /* =====================================================
+       MOBILE IMAGE CARD
+       ===================================================== */
+
+    .about-image {
+        width: 100%;
+
+        /*
+           Keep the same portrait ratio
+           as the original photos.
+        */
+
+        aspect-ratio: 2 / 3;
+
+        height: auto;
+
+        overflow: hidden;
+
+        background: #ffffff;
+
+        border: 2px solid var(--green);
+
+        border-radius: 9px;
+
+        box-shadow:
+            0 5px 16px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* =====================================================
+       MOBILE IMAGE
+       NO CROPPING
+       ===================================================== */
+
+    .about-image img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        /*
+           THIS IS THE IMPORTANT PART.
+           Complete photo remains visible.
+        */
+
+        object-fit: contain;
+
+        object-position: center;
+
+        background: #ffffff;
+
+        transform: none !important;
+    }
+
+
+    /* Disable hover effects on mobile */
+
+    .about-image:hover {
+        transform: none;
+
+        box-shadow:
+            0 5px 16px rgba(0, 0, 0, 0.08);
+    }
+
+
+    .about-image:hover img {
+        transform: none !important;
+    }
+
+
+    /* =====================================================
+       ABOUT CONTENT
+       ===================================================== */
+
+    .about-content {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0;
+
+        padding: 52px 20px 55px;
+    }
+
+
+    /* =====================================================
+       LABEL
+       ===================================================== */
+
+    .about-label {
+        margin-bottom: 15px;
+
+        font-size: 10px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    /* =====================================================
+       MAIN HEADING
+       ===================================================== */
+
+    .about-content h1 {
+        width: 100%;
+
+        margin-bottom: 30px;
+
+        color: var(--black);
+
+        font-size: 37px;
+
+        line-height: 1.03;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .about-content h1 span {
+        margin-top: 4px;
+
+        color: var(--green);
+    }
+
+
+    /* =====================================================
+       PARAGRAPHS
+       ===================================================== */
+
+    .about-content p {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-bottom: 19px;
+
+        color: #666666;
+
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+
+    .about-content strong {
+        color: #111111;
+    }
+
+
+    /* =====================================================
+       HIGHLIGHTS
+       ===================================================== */
+
+    .about-highlight {
+        width: 100%;
+
+        margin: 0;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        border-top: 1px solid var(--border);
+
+        border-bottom: 1px solid var(--border);
+    }
+
+
+    .highlight-item {
+        min-height: auto;
+
+        padding: 24px 20px;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+
+    .highlight-item:last-child {
+        border-bottom: none;
+    }
+
+
+    .highlight-item strong {
+        margin-bottom: 6px;
+
+        color: var(--green);
+
+        font-size: 29px;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .highlight-item span {
+        font-size: 10px;
+
+        letter-spacing: 1.1px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       ===================================================== */
+
+    .about-contact {
+        width: 100%;
+
+        padding: 62px 20px 72px;
+    }
+
+
+    .about-contact .about-label {
+        margin-bottom: 16px;
+    }
+
+
+    .about-contact h2 {
+        margin-bottom: 18px;
+
+        font-size: 34px;
+
+        line-height: 1.05;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .about-contact p {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-bottom: 20px;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+
+    .about-contact a {
+        font-size: 18px;
+
+        padding-bottom: 4px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .about-footer {
+        padding: 20px 15px;
+    }
+
+
+    .about-footer p {
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    /* =====================================================
+       PHOTOS
+       ===================================================== */
+
+    .about-images {
+        padding: 18px 10px 0;
+
+        gap: 7px;
+    }
+
+
+    .about-image {
+        aspect-ratio: 2 / 3;
+
+        border: 2px solid var(--green);
+
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+       CONTENT
+       ===================================================== */
+
+    .about-content {
+        padding: 45px 17px 50px;
+    }
+
+
+    .about-content h1 {
+        font-size: 34px;
+
+        letter-spacing: -1.3px;
+    }
+
+
+    .about-content p {
+        font-size: 14px;
+
+        line-height: 1.72;
+    }
+
+
+    /* =====================================================
+       HIGHLIGHTS
+       ===================================================== */
+
+    .highlight-item {
+        padding: 22px 17px;
+    }
+
+
+    .highlight-item strong {
+        font-size: 27px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       ===================================================== */
+
+    .about-contact {
+        padding: 55px 17px 65px;
+    }
+
+
+    .about-contact h2 {
+        font-size: 30px;
+    }
+
+}
